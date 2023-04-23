@@ -181,8 +181,9 @@ input[type="checkbox"]{
   section .contentBx .formBx{
     width: 100%;
     padding: 40px;
-    background: rgb(255 255 255 / 0.5);
+    background: rgb(255 255 255 / 0.8);
     margin: 50px;
+    border-radius: 10px;
   }
   section .contentBx .formBx h3{
     color: #607d8b;
