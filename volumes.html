@@ -40,13 +40,11 @@
            border-radius: 5px;
            border: 1px solid;
            margin-bottom: 10px;" type="any">
-           <a style="    background: #0070ff;
-           width: 85%;
-           display: flex;
-           align-items: center;
-           border-radius: 5px;
-           justify-content: center;"href=""> <input style="width: 30px;" src="img/camera.png" type="image">
-            </a>
+            <button style="background-color: #0070ff;
+            width: 85%;
+            border: none;
+            border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()"><img style="width: 28px;" src="img/camera.png" alt=""></button>
+            
 
         </form>
        
@@ -79,10 +77,19 @@
             });
     
         </script>
-
+        <script>
+        function mostrarEsconderDiv() {
+            var minhaDiv = document.getElementById("camera");
+            if (minhaDiv.style.display === "none") {
+                minhaDiv.style.display = "block";
+            } else {
+                minhaDiv.style.display = "none";
+            }
+            }
+        </script>
         <style>
             #camera {
-             
+            display: none;
             }
         </style>
 </body>
