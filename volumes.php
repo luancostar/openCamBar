@@ -76,7 +76,7 @@
     
             Quagga.onDetected(function (data) {
 
-                console.log(data.codeResult.code);
+                console.log(trimmedCode);
 
                 var code = data.codeResult.code;
                 var trimmedCode = code.substring(1, code.length - 1);
