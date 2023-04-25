@@ -1,5 +1,5 @@
 <?php
-require_once('conexao.php');
+require_once('../conexao.php');
 session_start();
 
 if (!isset($_SESSION['id_motorista'])) {
@@ -31,7 +31,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/7a8d54eabc.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/coletas.css">
+	<link rel="stylesheet" href="../css/coletas.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title>VB - Motoristas</title>
 </head>
@@ -40,7 +40,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 	<nav>
 		<div class="nav-content">
 			<div class="initial-nav">
-				<img src="img/logo_vb.png" alt="">
+				<img src="../img/logo_vb.png" alt="">
 				<p id="tag">Motoristas</p>
 			</div>
 			<div class="final-nav">
@@ -49,7 +49,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 					</p>
 				</h6>
 
-				<img src="img/user.png" alt="">
+				<img src="../img/user.png" alt="">
 				<a href=""> <i class="fas fa-sign-out-alt">Sair</i> </a>
 			</div>
 		</div>
@@ -109,7 +109,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 		</div>
 	</div>
 
-	<script src="js/searchTab.js"></script>
+	<script src="../js/searchTab.js"></script>
 </body>
 
 </html>
