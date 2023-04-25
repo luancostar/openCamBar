@@ -13,7 +13,7 @@
     <div id="resultado"></div>
     <div id="camera"></div>
 
-    <script src="quagga.min.js"></script>
+    <script src="../quagga.min.js"></script>
 
     <script>
         Quagga.init({
