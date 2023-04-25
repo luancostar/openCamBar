@@ -54,7 +54,6 @@ session_start();
               ?>
 
             </div>
-
             <div class="inputBx">
               <p> Não consegue logar ? <a href="">Clique aqui</a></p>
             </div>
