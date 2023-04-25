@@ -16,17 +16,16 @@
     <script src="quagga.min.js"></script>
 
     <script>
-
         Quagga.init({
             inputStream: {
                 name: "Live",
                 type: "LiveStream",
-                target: document.querySelector('#camera')    // Or '#yourElement' (optional)
+                target: document.querySelector('#camera') // Or '#yourElement' (optional)
             },
             decoder: {
                 readers: ["codabar_reader"]
             }
-        }, function (err) {
+        }, function(err) {
             if (err) {
                 console.log(err);
                 return
@@ -35,11 +34,10 @@
             Quagga.start();
         });
 
-        Quagga.onDetected(function (data) {
+        Quagga.onDetected(function(data) {
             console.log(data.codeResult.code);
             document.querySelector('#resultado').innerText = data.codeResult.code;
         });
-
     </script>
 
 </body>
