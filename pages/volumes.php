@@ -1,3 +1,26 @@
+<?php
+require_once('../conexao.php');
+session_start();
+
+if (!isset($_SESSION['id_motorista'])) {
+    header('Location: index.php');
+    exit();
+}
+
+function getMotoristaById($id)
+{
+    $sql = "SELECT * FROM cadastro_motoristas WHERE id='$id'";
+    $result = abrirBanco()->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $motorista = $row;
+        return $motorista;
+    }
+    return [];
+}
+
+$motorista = getMotoristaById($_SESSION['id_motorista'])
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,8 +43,8 @@
                 <p id="tag">Motoristas</p>
             </div>
             <div class="final-nav">
-                <h6>João da Silva Bezerra <p>
-                        01305132583
+                <h6><?= $motorista['nome'] ?> <p>
+                        <?= $motorista['cpf'] ?>
                     </p>
                 </h6>
 
