@@ -22,12 +22,12 @@ function autenticarUsuario()
             if ($user_pass == $database_pass) {
                 $_SESSION['erro_login'] = '';
                 $_SESSION['id_motorista'] = $row['id'];
-                header("Location: coletas.php");
+                header("Location: pages/coletas.php");
                 exit();
             }
         }
     }
     $_SESSION['erro_login'] = "Login inválido";
-    header("Location: index.php");
+    header("Location: pages/index.php");
     exit();
 }
