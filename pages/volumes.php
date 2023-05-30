@@ -66,6 +66,15 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                 </div>
 
             </div>
+            <div style="width: 100%;width: 100%;
+                        display: block;
+                        margin-top: 1.5rem;" id="minhaDiv" class="esconder">
+                <h6 style="display: flex;
+                    width: 100%;
+                    justify-content:center;">Destinatário: <p style="margin-left: 10px;"> 
+                Não encontrado!</p> </h6>
+            </div>
+
             <form id="formSend" action="">
                 <button style="
                 border: none;
@@ -77,7 +86,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
         </form>
             <form id="input-form" action="">
                 <label for="">Inserir Código de Barras</label>
-                <input id="resultado" value="" style="    width: 85%;
+                <input id="resultado" oninput="mostrarDiv()" value="" style="    width: 85%;
            border-radius: 5px;
            border: 1px solid;
            margin-bottom: 10px;
@@ -92,7 +101,24 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 
             </form>
  
-            
+            <style>
+            .esconder {
+            display: none;
+             }
+            </style>
+
+            <script>
+                function mostrarDiv() {
+                    var input = document.getElementById('resultado');
+                    var div = document.getElementById('minhaDiv');
+
+                    if (input.value !== '') {
+                        div.style.display = 'block';
+                    } else {
+                        div.style.display = 'none';
+                }
+                }
+            </script>
             <div id="resultado"></div>
             
             <script src="../js/quagga.min.js"></script>
