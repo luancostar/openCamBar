@@ -57,7 +57,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 	<div class="container mt-5">
 		<div class="row mt-5">
 			<div class="col-12 col-lg-8">
-				<h1 class="display-4">Coletas Agendadas</h1>
+				<h1 class="display-4">Entregas Agendadas</h1>
 			</div>
 
 			<div class="col-12 mt-4">
@@ -82,7 +82,6 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 							<td><i class="fas fa-truck"></i></td>
 							<td class="searchable">Cliente da Silva</td>
 							<td>123654</td>
-
 						</tr>
 						<tr>
 							<td><i class="fas fa-truck"></i></td>

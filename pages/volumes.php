@@ -56,10 +56,16 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-12 col-lg-8">
-                <h1 style="font-size: 2rem !important; text-align: center;" class="display-4">Confirmação de Coleta
+                <h1 style="font-size: 1.5rem !important; text-align: center;" class="display-4">Confirmação de Entrega
                 </h1>
             </div>
-            <div id="camera"></div>
+          
+            <div id="camera">
+            <div class="label">
+                
+                </div>
+            </div>
+           
             <form id="input-form" action="">
                 <label for="">Inserir Código de Barras</label>
                 <input id="resultado" value="" style="    width: 85%;

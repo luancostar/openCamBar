@@ -54,6 +54,19 @@ h1{
     padding: 5px;
     border-radius: 5px;
 }
+.label{
+    display: block;
+    border: 1px solid #5c5c5c;
+    width: 100%;
+    position: absolute;
+    margin-top: 3rem;
+    height: 4rem;
+    backdrop-filter: grayscale(1);
+    z-index: 1;
+    color-interpolation-filters: srgb;
+    border-left: none;
+    border-right: none;
+}
 tr:hover{
     background-color: rgb(203, 239, 255);
 }
@@ -66,6 +79,10 @@ tr:hover{
     display: grid;
     justify-items: center;
     width: 100%;
+    position: absolute;
+    background: #fff;
+    margin-top: 205px;
+    height: 9rem;
 }
 #camera{
     width: 100%;
@@ -75,4 +92,6 @@ tr:hover{
 }
 video{
     width: -webkit-fill-available !important; 
+    object-fit: none;
+    filter: blur(1px);
 }
