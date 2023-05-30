@@ -64,8 +64,17 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
             <div class="label">
                 
                 </div>
+
             </div>
-           
+            <form id="formSend" action="">
+                <button style="
+                border: none;
+                background: transparent;
+             " type="button"  ><img style="width: 60px;" src="../img/enviar.png" alt="">
+                <label style="font-size: 22px;
+                font-weight: bold;
+                color: #767676;" for="">enviar</label></button>
+        </form>
             <form id="input-form" action="">
                 <label for="">Inserir Código de Barras</label>
                 <input id="resultado" value="" style="    width: 85%;
@@ -82,8 +91,10 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 
 
             </form>
-
+ 
+            
             <div id="resultado"></div>
+            
             <script src="../js/quagga.min.js"></script>
 
             <script>
