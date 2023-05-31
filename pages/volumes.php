@@ -43,9 +43,8 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                 <p id="tag">Motoristas</p>
             </div>
             <div class="final-nav">
-                <h6><?= $motorista['nome'] ?> <p>
-                        <?= $motorista['cpf'] ?>
-                    </p>
+                <h6><?= $motorista['nome'] ?>
+                    <p><?= $motorista['cpf'] ?></p>
                 </h6>
 
                 <img src="../img/user.png" alt="">
@@ -56,55 +55,37 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-12 col-lg-8">
-                <h1 style="font-size: 1.5rem !important; text-align: center;" class="display-4">Confirmação de Entrega
-                </h1>
+                <h1 style="font-size: 1.5rem !important; text-align: center;" class="display-4">Confirmação de Entrega</h1>
             </div>
-          
+
             <div id="camera">
-            <div class="label">
-                
+                <div class="label">
+                </div>
+            </div>
+            <form id="input-form" action="../functions.php" method="POST">
+                <label for="">Inserir Código de Barras</label>
+                <input id="resultado" oninput="mostrarDiv()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />
+                <button style="background-color: #0070ff; width: 85%; border: none; border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()">
+                    <img style="width: 28px;" src="../img/camera.png" alt="">
+                </button>
+                <button style=" border: none; background: transparent;" type="submit">
+                    <img style="width: 60px;" src="../img/enviar.png" alt="">
+                    <label style="font-size: 22px; font-weight: bold; color: #767676;" for="">enviar</label>
+                </button>
+
+                <div style="width: 100%;width: 100%; display: block; margin-top: 1.5rem;" id="minhaDiv" class="esconder">
+                    <h6 style="display: flex; width: 100%; justify-content:center;">Destinatário:
+                        <p style="margin-left: 10px;">Não encontrado!</p>
+                    </h6>
                 </div>
 
-            </div>
-            <div style="width: 100%;width: 100%;
-                        display: block;
-                        margin-top: 1.5rem;" id="minhaDiv" class="esconder">
-                <h6 style="display: flex;
-                    width: 100%;
-                    justify-content:center;">Destinatário: <p style="margin-left: 10px;"> 
-                Não encontrado!</p> </h6>
-            </div>
-
-            <form id="formSend" action="">
-                <button style="
-                border: none;
-                background: transparent;
-             " type="button"  ><img style="width: 60px;" src="../img/enviar.png" alt="">
-                <label style="font-size: 22px;
-                font-weight: bold;
-                color: #767676;" for="">enviar</label></button>
-        </form>
-            <form id="input-form" action="">
-                <label for="">Inserir Código de Barras</label>
-                <input id="resultado" oninput="mostrarDiv()" value="" style="    width: 85%;
-           border-radius: 5px;
-           border: 1px solid;
-           margin-bottom: 10px;
-           text-align: center;
-           font-size: 20px;
-           font-weight: bold;" type="text" />
-                <button style="background-color: #0070ff;
-            width: 85%;
-            border: none;
-            border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()"><img style="width: 28px;" src="../img/camera.png" alt=""></button>
-
-
+                <input type="hidden" name="finalizarEntrega">
             </form>
- 
+
             <style>
-            .esconder {
-            display: none;
-             }
+                .esconder {
+                    display: none;
+                }
             </style>
 
             <script>
@@ -116,11 +97,11 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                         div.style.display = 'block';
                     } else {
                         div.style.display = 'none';
-                }
+                    }
                 }
             </script>
             <div id="resultado"></div>
-            
+
             <script src="../js/quagga.min.js"></script>
 
             <script>

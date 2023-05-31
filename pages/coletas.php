@@ -19,7 +19,52 @@ function getMotoristaById($id)
 	return [];
 }
 
-$motorista = getMotoristaById($_SESSION['id_motorista'])
+function getVolumes()
+{
+	$id_motorista = $_SESSION['id_motorista'];
+	$entregas_agendadas = [];
+
+	$sql = "SELECT id FROM tracking WHERE id_motorista='$id_motorista'";
+	$result = abrirBanco()->query($sql);
+	while ($row = $result->fetch_assoc()) {
+		$id_tracking = $row['id'];
+		$sql2 = "SELECT codigo_barras FROM tracking_mercadorias WHERE id_saida_entrega='$id_tracking' AND id_entrega = 0";
+		$result2 = abrirBanco()->query($sql2);
+		while ($row2 = $result2->fetch_assoc()) {
+			$entregas_agendadas[] = $row2['codigo_barras'];
+		}
+	}
+	return $entregas_agendadas;
+}
+
+function getEntregasAgendadas()
+{
+	$volumes = getVolumes();
+	$entregas_agendadas = [];
+
+	foreach ($volumes as $codigo_barras) {
+		$sql = "SELECT * FROM tracking_etiquetas WHERE codigo_barras='$codigo_barras'";
+		$result = abrirBanco()->query($sql);
+		$row = $result->fetch_assoc();
+
+		$row['nome_cidade'] = getNomeCidade($row['id_cidade_destino']);
+		$entregas_agendadas[] = $row;
+	}
+
+	return $entregas_agendadas;
+}
+
+function getNomeCidade($id_cidade)
+{
+	$sql = "SELECT nome FROM cadastro_cidades WHERE id='$id_cidade'";
+	$result = abrirBanco()->query($sql);
+	$row = $result->fetch_assoc();
+	$nome_cidade = $row['nome'];
+
+	return $nome_cidade;
+}
+
+$motorista = getMotoristaById($_SESSION['id_motorista']);
 ?>
 
 <!DOCTYPE html>
@@ -74,36 +119,25 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 							<th></th>
 							<th>Destinatário</th>
 							<th>Nota Fiscal</th>
-
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><i class="fas fa-truck"></i></td>
-							<td class="searchable">Cliente da Silva</td>
-							<td>123654</td>
-						</tr>
-						<tr>
-							<td><i class="fas fa-truck"></i></td>
-							<td class="searchable">Cliente da Silva</td>
-							<td>123654</td>
 
-						</tr>
-						<tr>
-							<td><i class="fas fa-truck"></i></td>
-							<td class="searchable">Cliente da Silva</td>
-							<td>123654</td>
-
-						</tr>
-						<tr>
-							<td><i class="fas fa-truck"></i></td>
-							<td class="searchable">Cliente da Silva</td>
-							<td>123654</td>
-
-						</tr>
+						<?php foreach (getEntregasAgendadas() as $volume) : ?>
+							<tr>
+								<td><i class="fas fa-truck"></i></td>
+								<td class="searchable"><a href="volumes.php"> <?= $volume['destinatario'] ?></a></td>
+								<td><?= $volume['nota_fiscal'] ?></td>
+							</tr>
+						<?php endforeach; ?>
 
 					</tbody>
 				</table>
+				<?php
+				if (empty(getEntregasAgendadas())) {
+					echo 'Não há entregas agendadas no momento';
+				}
+				?>
 			</div>
 		</div>
 	</div>
