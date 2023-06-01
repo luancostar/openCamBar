@@ -64,18 +64,18 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
             </div>
             <form id="input-form" action="../functions.php" method="POST">
                 <label for="">Inserir Código de Barras</label>
-                <input id="resultado" oninput="mostrarDiv()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />
+                <input id="resultado" oninput="checkCodigoBarras()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />
                 <button style="background-color: #0070ff; width: 85%; border: none; border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()">
                     <img style="width: 28px;" src="../img/camera.png" alt="">
                 </button>
-                <button style=" border: none; background: transparent;" type="submit">
+                <button id="enviar_button" style=" border: none; background: transparent;" type="submit">
                     <img style="width: 60px;" src="../img/enviar.png" alt="">
                     <label style="font-size: 22px; font-weight: bold; color: #767676;" for="">enviar</label>
                 </button>
 
                 <div style="width: 100%;width: 100%; display: block; margin-top: 1.5rem;" id="minhaDiv" class="esconder">
                     <h6 style="display: flex; width: 100%; justify-content:center;">Destinatário:
-                        <p style="margin-left: 10px;">Não encontrado!</p>
+                        <p id="destinatario_status" style="margin-left: 10px;"></p>
                     </h6>
                 </div>
 
@@ -103,6 +103,8 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
             <div id="resultado"></div>
 
             <script src="../js/quagga.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="../js/buscaUsuario.js"></script>
 
             <script>
                 Quagga.init({
