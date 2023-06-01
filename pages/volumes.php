@@ -48,7 +48,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                 </h6>
 
                 <img src="../img/user.png" alt="">
-                <a href=""> <i class="fas fa-sign-out-alt">Sair</i> </a>
+                <a href="../logoff.php"> <i class="fas fa-sign-out-alt">Sair</i> </a>
             </div>
         </div>
     </nav>
