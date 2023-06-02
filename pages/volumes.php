@@ -66,14 +66,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                 </div>
 
             </div>
-            <div style="width: 100%;width: 100%;
-                        display: block;
-                        margin-top: 1.5rem;" id="minhaDiv" class="esconder">
-                <h6 style="display: flex;
-                    width: 100%;
-                    justify-content:center;">Destinatário: <p style="margin-left: 10px;"> 
-                Não encontrado!</p> </h6>
-            </div>
+           
 
             <form id="formSend" action="">
                 <button style="
@@ -100,7 +93,15 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
 
 
             </form>
- 
+            <div style="width: 100%;width: 100%;
+                        display: block;
+                        margin-top: 2.5rem;" id="minhaDiv" class="esconder">
+                <h6 style="display: flex;
+                    width: 100%;
+                    justify-content:center;">
+                Destinatário: <p style="margin-left: 10px;"> 
+                Não encontrado!</p> </h6>
+            </div>
             <style>
             .esconder {
             display: none;
