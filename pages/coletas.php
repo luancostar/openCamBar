@@ -116,18 +116,27 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 				<table class="table search-table">
 					<thead>
 						<tr>
-							<th></th>
 							<th>Destinatário</th>
 							<th>Nota Fiscal</th>
+							<th>Código de barras</th>
 						</tr>
 					</thead>
 					<tbody>
 
 						<?php foreach (getEntregasAgendadas() as $volume) : ?>
 							<tr>
-								<td><i class="fas fa-truck"></i></td>
-								<td class="searchable"><a href="volumes.php"> <?= $volume['destinatario'] ?></a></td>
+								<td class="searchable"><?= $volume['destinatario'] ?></td>
 								<td><?= $volume['nota_fiscal'] ?></td>
+								<td><?= $volume['codigo_barras'] ?></td>
+								<td>
+									<form action="volumes.php" method="post">
+										<button type="submit">
+											Dar baixa
+										</button>
+
+										<input type="hidden" name="codigo_barras" value="<?= $volume['codigo_barras'] ?>">
+									</form>
+								</td>
 							</tr>
 						<?php endforeach; ?>
 
