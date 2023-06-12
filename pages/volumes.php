@@ -2,6 +2,11 @@
 require_once('../conexao.php');
 session_start();
 
+if (!isset($_POST['codigo_barras'])) {
+    header('Location: coletas.php');
+    exit();
+}
+
 if (!isset($_SESSION['id_motorista'])) {
     header('Location: index.php');
     exit();
@@ -19,7 +24,8 @@ function getMotoristaById($id)
     return [];
 }
 
-$motorista = getMotoristaById($_SESSION['id_motorista'])
+$motorista = getMotoristaById($_SESSION['id_motorista']);
+$codigo_barras = $_POST['codigo_barras'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -64,7 +70,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
             </div>
             <form id="input-form" action="../functions.php" method="POST">
                 <label for="">Inserir Código de Barras</label>
-                <input id="resultado" oninput="checkCodigoBarras()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />
+                <input id="resultado" oninput="verifyCode()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />
                 <button style="background-color: #0070ff; width: 85%; border: none; border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()">
                     <img style="width: 28px;" src="../img/camera.png" alt="">
                 </button>
@@ -74,8 +80,8 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                 </button>
 
                 <div style="width: 100%;width: 100%; display: block; margin-top: 1.5rem;" id="minhaDiv" class="esconder">
-                    <h6 style="display: flex; width: 100%; justify-content:center;">Destinatário:
-                        <p id="destinatario_status" style="margin-left: 10px;"></p>
+                    <h6 style="display: flex; width: 100%; justify-content:center;">
+                        <p id="codigo_status" style="margin-left: 10px;"></p>
                     </h6>
                 </div>
 
@@ -99,13 +105,24 @@ $motorista = getMotoristaById($_SESSION['id_motorista'])
                         div.style.display = 'none';
                     }
                 }
+
+                function verifyCode() {
+                    var userInput = document.getElementById('resultado').value;
+                    var codigoBarras = "<?php echo $codigo_barras; ?>";
+
+                    if (userInput === codigoBarras) {
+                        $("#codigo_status").text('');
+                        $("#enviar_button").prop("disabled", false);
+                    } else {
+                        $("#codigo_status").text("Código de barras não corresponde ao volume selecionado");
+                        $("#enviar_button").prop("disabled", true);
+                    }
+                }
             </script>
             <div id="resultado"></div>
 
             <script src="../js/quagga.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="../js/buscaUsuario.js"></script>
-
             <script>
                 Quagga.init({
                     inputStream: {

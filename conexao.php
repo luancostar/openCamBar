@@ -10,13 +10,13 @@
 	$servidor = "localhost";
 	$usuario = "root";
 	$senha = "";
-	$dbname = "vb-virtual";
+	$dbname = "tracking";
 	
 	//Criar a conexão
 	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 	function abrirBanco(){
 		// $conexao = new mysqli ("localhost:3306","called63_vb","123456","called63_vb");
-		$conexao = new mysqli ("localhost","root","","vb-virtual");
+		$conexao = new mysqli ("localhost","root","","tracking");
 			return $conexao;
 		}
