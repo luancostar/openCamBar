@@ -43,6 +43,13 @@ function finalizarEntrega()
     $codigo_barras = $_POST['codigo_barras'];
     $id_motorista = $_SESSION['id_motorista'];
 
+    $sql = "SELECT * FROM tracking_mercadorias WHERE codigo_barras = $codigo_barras";
+    $result = $banco->query($sql);
+    if(!$result) {
+        header('Location: pages/volumes.php');
+        exit();
+    }
+
     // BUSCA A PLACA DO ÚLTIMO REGISTRO DE SAÍDA PARA ENTREGA DO MOTORISTA
     $sql = "SELECT id_placa FROM tracking WHERE id_motorista='$id_motorista' ORDER BY id DESC LIMIT 1";
     $result = $banco->query($sql);
@@ -61,6 +68,7 @@ function finalizarEntrega()
     // BUSCA OS DADOS DO VOLUME
     $sql = "SELECT * FROM tracking_mercadorias WHERE codigo_barras = $codigo_barras";
     $result = $banco->query($sql);
+
     $row = $result->fetch_assoc();
 
     //Insere uma movimentação na tabela tracking_movimentacoes

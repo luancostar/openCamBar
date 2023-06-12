@@ -141,7 +141,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 						<tr>
 							<th>Destinatário</th>
 							<th>Nota Fiscal</th>
-							<th>Código de barras</th>
+							<th>N° Volume</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -150,7 +150,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 							<tr>
 								<td class="searchable"><?= $volume['destinatario'] ?></td>
 								<td><?= $volume['nota_fiscal'] ?></td>
-								<td><?= $volume['codigo_barras'] ?></td>
+								<td><?= $volume['qtd_volumes'] ?></td>
 								<td>
 									<form action="volumes.php" method="post">
 										<button id="darBaixa" type="submit"></button>
