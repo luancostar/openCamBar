@@ -84,22 +84,45 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 <body>
 	<nav>
 		<div class="nav-content">
-			<div class="initial-nav">
+			<!-- <div class="initial-nav">
 				<img src="../img/logo_vb.png" alt="">
 				<p id="tag">Motoristas</p>
-			</div>
+			</div> -->
 			<div class="final-nav">
-				<h6><?= $motorista['nome'] ?><p>
+			<div class="dataDiv">
+			<img src="../img/user.png" alt="">
+				<h6>
+					<?= $motorista['nome'] ?><p>
 						<?= $motorista['cpf'] ?>
 					</p>
 				</h6>
-
-				<img src="../img/user.png" alt="">
-				<a href="../logoff.php"> <i class="fas fa-sign-out-alt">Sair</i> </a>
+			</div>
+	 
+				<button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
+	
 			</div>
 		</div>
 	</nav>
 	<div class="container mt-5">
+	<div id="data-hora"></div>
+	<script>
+			// Função para formatar 1 em 01
+			const zeroFill = n => {
+				return ('0' + n).slice(-2);
+			}
+
+			// Cria intervalo
+			const interval = setInterval(() => {
+				// Pega o horário atual
+				const now = new Date();
+
+				// Formata a data conforme dd/mm/aaaa hh:ii:ss
+				const dataHora = zeroFill(now.getUTCDate()) + '/' + zeroFill((now.getMonth() + 1)) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+				// Exibe na tela usando a div#data-hora
+				document.getElementById('data-hora').innerHTML = dataHora;
+			}, 1000);
+		</script>
 		<div class="row mt-5">
 			<div class="col-12 col-lg-8">
 				<h1 class="display-4">Entregas Agendadas</h1>
@@ -130,9 +153,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 								<td><?= $volume['codigo_barras'] ?></td>
 								<td>
 									<form action="volumes.php" method="post">
-										<button type="submit">
-											Dar baixa
-										</button>
+										<button id="darBaixa" type="submit"></button>
 
 										<input type="hidden" name="codigo_barras" value="<?= $volume['codigo_barras'] ?>">
 									</form>

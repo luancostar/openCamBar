@@ -42,22 +42,27 @@ $codigo_barras = $_POST['codigo_barras'];
 </head>
 
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="initial-nav">
-                <img src="../img/logo_vb.png" alt="">
-                <p id="tag">Motoristas</p>
-            </div>
-            <div class="final-nav">
-                <h6><?= $motorista['nome'] ?>
-                    <p><?= $motorista['cpf'] ?></p>
-                </h6>
-
-                <img src="../img/user.png" alt="">
-                <a href="../logoff.php"> <i class="fas fa-sign-out-alt">Sair</i> </a>
-            </div>
-        </div>
-    </nav>
+<nav>
+		<div class="nav-content">
+			<!-- <div class="initial-nav">
+				<img src="../img/logo_vb.png" alt="">
+				<p id="tag">Motoristas</p>
+			</div> -->
+			<div class="final-nav">
+			<div class="dataDiv">
+			<img src="../img/user.png" alt="">
+				<h6>
+					<?= $motorista['nome'] ?><p>
+						<?= $motorista['cpf'] ?>
+					</p>
+				</h6>
+			</div>
+	 
+				<button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
+	
+			</div>
+		</div>
+	</nav>
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-12 col-lg-8">
@@ -78,7 +83,17 @@ $codigo_barras = $_POST['codigo_barras'];
                     <img style="width: 60px;" src="../img/enviar.png" alt="">
                     <label style="font-size: 22px; font-weight: bold; color: #767676;" for="">enviar</label>
                 </button>
-
+                <a href="coletas.php"rel="noopener noreferrer"> <button style="    background-color: #b5b5b5;
+                        width: auto;
+                        border: none;
+                        border-radius: 5px;
+                        font-family: sans-serif;
+                        margin-top: 3rem;
+                        font-weight: bold;
+                        color: #fff;" type="button" onclick="mostrarEsconderDiv()">
+                            Voltar
+                        </button>
+                    </a>
                 <div style="width: 100%;width: 100%; display: block; margin-top: 1.5rem;" id="minhaDiv" class="esconder">
                     <h6 style="display: flex; width: 100%; justify-content:center;">
                         <p id="codigo_status" style="margin-left: 10px;"></p>
