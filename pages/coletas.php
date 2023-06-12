@@ -153,9 +153,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 								<td><?= $volume['codigo_barras'] ?></td>
 								<td>
 									<form action="volumes.php" method="post">
-										<button type="submit">
-											Dar baixa
-										</button>
+										<button id="darBaixa" type="submit"></button>
 
 										<input type="hidden" name="codigo_barras" value="<?= $volume['codigo_barras'] ?>">
 									</form>
