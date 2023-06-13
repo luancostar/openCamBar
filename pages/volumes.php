@@ -83,7 +83,7 @@ $codigo_barras = $_POST['codigo_barras'];
                     <img style="width: 60px;" src="../img/enviar.png" alt="">
                     <label style="font-size: 22px; font-weight: bold; color: #767676;" for="">enviar</label>
                 </button>
-                <a href="coletas.php"rel="noopener noreferrer"> <button style="    background-color: #b5b5b5;
+                <a href="coletas.php" rel="noopener noreferrer"> <button style="    background-color: #b5b5b5;
                         width: auto;
                         border: none;
                         border-radius: 5px;
@@ -96,7 +96,7 @@ $codigo_barras = $_POST['codigo_barras'];
                     </a>
                 <div style="width: 100%;width: 100%; display: block; margin-top: 1.5rem;" id="minhaDiv" class="esconder">
                     <h6 style="display: flex; width: 100%; justify-content:center;">
-                        <p id="codigo_status" style="margin-left: 10px;"></p>
+                        <p id="codigo_status" style="text-align: center;"></p>
                     </h6>
                 </div>
 
