@@ -42,27 +42,27 @@ $codigo_barras = $_POST['codigo_barras'];
 </head>
 
 <body>
-<nav>
-		<div class="nav-content">
-			<!-- <div class="initial-nav">
+    <nav>
+        <div class="nav-content">
+            <!-- <div class="initial-nav">
 				<img src="../img/logo_vb.png" alt="">
 				<p id="tag">Motoristas</p>
 			</div> -->
-			<div class="final-nav">
-			<div class="dataDiv">
-			<img src="../img/user.png" alt="">
-				<h6>
-					<?= $motorista['nome'] ?><p>
-						<?= $motorista['cpf'] ?>
-					</p>
-				</h6>
-			</div>
-	 
-				<button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
-	
-			</div>
-		</div>
-	</nav>
+            <div class="final-nav">
+                <div class="dataDiv">
+                    <img src="../img/user.png" alt="">
+                    <h6>
+                        <?= $motorista['nome'] ?><p>
+                            <?= $motorista['cpf'] ?>
+                        </p>
+                    </h6>
+                </div>
+
+                <button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
+
+            </div>
+        </div>
+    </nav>
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-12 col-lg-8">
@@ -91,9 +91,9 @@ $codigo_barras = $_POST['codigo_barras'];
                         margin-top: 3rem;
                         font-weight: bold;
                         color: #fff;" type="button" onclick="mostrarEsconderDiv()">
-                            Voltar
-                        </button>
-                    </a>
+                        Voltar
+                    </button>
+                </a>
                 <div style="width: 100%;width: 100%; display: block; margin-top: 1.5rem;" id="minhaDiv" class="esconder">
                     <h6 style="display: flex; width: 100%; justify-content:center;">
                         <p id="codigo_status" style="text-align: center;"></p>
@@ -120,11 +120,10 @@ $codigo_barras = $_POST['codigo_barras'];
                         div.style.display = 'none';
                     }
                 }
-
-                function verifyCode() {
+                
+                setInterval(() => {
                     var userInput = document.getElementById('resultado').value;
                     var codigoBarras = "<?php echo $codigo_barras; ?>";
-
                     if (userInput === codigoBarras) {
                         $("#codigo_status").text('');
                         $("#enviar_button").prop("disabled", false);
@@ -132,7 +131,7 @@ $codigo_barras = $_POST['codigo_barras'];
                         $("#codigo_status").text("Código de barras não corresponde ao volume selecionado");
                         $("#enviar_button").prop("disabled", true);
                     }
-                }
+                }, 500)
             </script>
             <div id="resultado"></div>
 
