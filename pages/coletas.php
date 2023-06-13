@@ -139,7 +139,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 				<table class="table search-table">
 					<thead>
 						<tr>
-							<th>Destinatário</th>
+							<th style="    vertical-align: baseline;" >Destinatário</th>
 							<th>Nota Fiscal</th>
 							<th>Código de barras</th>
 						</tr>
