@@ -1,7 +1,6 @@
 <?php 
 session_start();
-
-unset($_SESSION['id_motorista']);
-header('Location: pages/index.php');
+session_destroy();
+header('Location: index.php');
 exit();
 ?>

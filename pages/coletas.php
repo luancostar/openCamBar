@@ -104,7 +104,7 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 				</h6>
 			</div>
 	 
-				<button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
+				<a href="../logoff.php"><button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button></a>
 	
 			</div>
 		</div>
