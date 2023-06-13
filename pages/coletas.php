@@ -80,7 +80,13 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title>VB - Motoristas</title>
 </head>
-
+<style>
+	textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0 !important;
+  border: 0 none !important;
+  outline: 0 !important;
+} 
+</style>
 <body>
 	<nav>
 		<div class="nav-content">
