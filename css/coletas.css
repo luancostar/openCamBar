@@ -4,6 +4,7 @@ nav{
     display: flex;
     justify-content: space-between;
 }
+ 
 h1{
     font-size: 2.5rem !important;
     font-weight: 400 !important;
@@ -113,12 +114,17 @@ h1{
     height: 45px;
     margin-top: -10px;
 }
+#darBaixa:focus {
+  box-shadow: 0 0 0 0 !important;
+  border: 0 none !important;
+  outline: 0 !important;
+}
 tr:hover{
     background-color: rgb(203, 239, 255);
 }
 .drawingBuffer{
-    width: 300px !important;
-    height: 300px !important;
+    width: 100px !important;
+    height: 100px !important;
     display: none;
 }
 #input-form{
@@ -128,7 +134,9 @@ tr:hover{
     position: absolute;
     background: #fff;
     margin-top: 205px;
-    height: 9rem;
+    height: max-content;
+    z-index: 1;
+    padding-top: 4rem;
 }
 #camera{
     width: 100%;
