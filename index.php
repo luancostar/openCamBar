@@ -8,7 +8,7 @@ session_start();
   <meta charset="UTF-8">
   <title>VB - Motoristas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -25,16 +25,16 @@ session_start();
   <body>
     <section>
       <div class="imgBx">
-        <img src="../img/wallpaper.png">
+        <img src="img/wallpaper.png">
       </div>
       <div class="contentBx">
         <div class="formBx">
           <div class="headbox">
-            <img src="../img/logo_vb.png" alt="">
+            <img src="img/logo_vb.png" alt="">
             <p>Motoristas</p>
           </div>
           <h2>Login</h2>
-          <form method="POST" action="../functions.php">
+          <form method="POST" action="functions.php">
             <div class="inputBx">
               <span>CPF do Motorista</span>
               <input type="number" name="cpf">
