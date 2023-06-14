@@ -68,11 +68,15 @@ $codigo_barras = $_POST['codigo_barras'];
             <div class="col-12 col-lg-8">
                 <h1 style="font-size: 1.5rem !important; text-align: center;" class="display-4">Confirmação de Entrega</h1>
             </div>
-
+            
             <div id="camera">
                 <div class="label">
                 </div>
+                <hr class="redLine">
+                <div class="label2">
+                </div>
             </div>
+             
             <form id="input-form" action="../functions.php" method="POST">
                 <label for="">Inserir Código de Barras</label>
                 <input id="resultado" oninput="verifyCode()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />

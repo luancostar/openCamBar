@@ -91,18 +91,39 @@ h1{
     background: #e5e5e5;
     margin-left: -1rem;
 }
-.label{
+.label {
     display: block;
-    border: 1px solid #5c5c5c;
     width: 100%;
     position: absolute;
     margin-top: 3rem;
-    height: 4rem;
+    height: 2.5rem;
     backdrop-filter: grayscale(1);
     z-index: 1;
     color-interpolation-filters: srgb;
     border-left: none;
     border-right: none;
+    margin-top: 0rem;
+    filter: brightness(0.5);
+}
+.label2 {
+    display: block;
+    width: 100%;
+    position: absolute;
+    margin-top: 3rem;
+    height: 4.2rem;
+    backdrop-filter: grayscale(1);
+    z-index: 1;
+    color-interpolation-filters: srgb;
+    border-left: none;
+    border-right: none;
+    margin-top: 8rem;
+    filter: brightness(0.5);
+}
+.redLine{
+    position: absolute;
+    margin-top: 5.2rem;
+    width: 100%;
+    background: #ff0000;
 }
 #darBaixa{
     left: 0;
@@ -136,7 +157,7 @@ tr:hover{
     margin-top: 205px;
     height: max-content;
     z-index: 1;
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 #camera{
     width: 100%;
@@ -146,6 +167,5 @@ tr:hover{
 }
 video{
     width: -webkit-fill-available !important; 
-    object-fit: none;
-    filter: blur(1px);
+    
 }
