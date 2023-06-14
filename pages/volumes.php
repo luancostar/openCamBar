@@ -83,8 +83,8 @@ $codigo_barras = $_POST['codigo_barras'];
                 <button style="background-color: #0070ff; width: 85%; border: none; border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()">
                     <img style="width: 28px;" src="../img/camera.png" alt="">
                 </button>
-                <button id="enviar_button" style=" border: none; background: transparent;" type="submit">
-                    <img style="width: 60px;" src="../img/enviar.png" alt="">
+                <button id="enviar_button" style=" border: none; background: transparent; margin-top: 1rem;" type="submit">
+                    <img style="width: 45px;" src="../img/enviar.png" alt="">
                     <label style="font-size: 22px; font-weight: bold; color: #767676;" for="">enviar</label>
                 </button>
                 <a href="coletas.php" rel="noopener noreferrer"> <button style="    background-color: #b5b5b5;
@@ -186,6 +186,17 @@ $codigo_barras = $_POST['codigo_barras'];
                     display: none;
                 }
             </style>
+            <footer>
+      <div class="text">
+        powered by
+        <div class="spanText">
+          <img src="../img/logotrack.png" alt="">
+        </div>
+        <div class="sname">
+        on <p>track.</p>
+        </div>
+      </div>
+    </footer>
 </body>
 
 </html>

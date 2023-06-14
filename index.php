@@ -59,10 +59,23 @@ session_start();
               <p> Não consegue logar ? <a href="">Clique aqui</a></p>
             </div>
           </form>
-
+          <footer>
+      <div class="text">
+        powered by
+        <div class="spanText">
+          <img src="img/logotrack.png" alt="">
+        </div>
+        <div class="sname">
+        on <p>track.</p>
         </div>
       </div>
+    </footer>
+        </div>
+        
+      </div>
+    
     </section>
+    
   </body>
 
   </html>

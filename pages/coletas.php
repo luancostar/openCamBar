@@ -177,7 +177,17 @@ $motorista = getMotoristaById($_SESSION['id_motorista']);
 			</div>
 		</div>
 	</div>
-
+	<footer>
+      <div class="text">
+        powered by
+        <div class="spanText">
+          <img src="../img/logotrack.png" alt="">
+        </div>
+        <div class="sname">
+        on <p>track.</p>
+        </div>
+      </div>
+    </footer>
 	<script src="../js/searchTab.js"></script>
 </body>
 
