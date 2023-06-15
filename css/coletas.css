@@ -13,6 +13,9 @@ h1{
     line-height: 1.2 !important;
     font-family: system-ui !important;
 }
+td{
+    text-align: center;
+}
 .spanText img{
     width: 28px;
   }

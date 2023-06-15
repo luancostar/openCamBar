@@ -4,83 +4,64 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>VB - Motoristas</title>
+  <meta charset="UTF">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-
+  <script src="js/loginScript.js" defer></script>
+  <title>ontrack. || Motoristas</title>
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet">
-  </head>
-
-  <body>
-    <section>
-      <div class="imgBx">
-        <img src="img/wallpaper.png">
-      </div>
-      <div class="contentBx">
-        <div class="formBx">
-          <div class="headbox">
-            <img src="img/logo_vb.png" alt="">
-            <p>Motoristas</p>
-          </div>
-          <h2>Login</h2>
-          <form method="POST" action="functions.php">
-            <div class="inputBx">
-              <span>CPF do Motorista</span>
-              <input type="number" name="cpf">
-            </div>
-            <div class="inputBx">
-              <span>Senha</span>
-              <input type="password" name="senha">
-            </div>
-            <div class="remember">
-              <label><input type="checkbox">Lembrar de mim</label>
-            </div>
-            <div class="inputBx">
-              <input type="hidden" name="login" value="login">
-              <input type="submit" value="Logar">
-              <?php if (isset($_SESSION['erro_login'])) {
-                echo '<p style="color: red">' . $_SESSION['erro_login'] . '</p>';
-              }
-              ?>
-
-            </div>
-            <div class="inputBx">
-              <p> Não consegue logar ? <a href="">Clique aqui</a></p>
-            </div>
-          </form>
-          <footer>
-      <div class="text">
-        powered by
-        <div class="spanText">
-          <img src="img/logotrack.png" alt="">
+  <main>
+    <section class="login">
+      <div class="wrapper">
+        <img src="img/ontrack-nobg.gif" class="login__logo">
+        <div class="content-name-small">
+          <div class="nametag-small"><p class="firstTag-small">on</p><p>track.</p><p class="text-position">
+          motoristas</p></div>
         </div>
-        <div class="sname">
-        on <p>track.</p>
-        </div>
+        <form action="functions.php" method="post" class="sign-in-form">
+        <h1 class="login__title">Fazer login</h1>
+        <label class="login__label">
+          <span>cpf do motorista</span>
+          <input required="" name="cpf" type="number" class="input">
+        </label>
+  
+        <label class="login__label">
+          <span>senha</span>
+          <input required="" name="senha" type="password" class="input">
+        </label>
+
+         <input type="hidden" name="login" value="login">
+         <button name="btn-entrar" type="submit" value="Logar" class="loginBtn">Logar</button>
+
+         <?php
+        if (!empty($erros)) :
+          foreach ($erros as $erro) :
+            echo $erro;
+          endforeach;
+        endif;
+        ?>
+
+      <div class="sup-btn">
+        <a href="#" class="login__link">Esqueci minha senha</a><br>
+        <a href="#" class="login__link">Contatar Suporte</a>
       </div>
-    </footer>
-        </div>
-        
+      </form>
       </div>
-    
+
     </section>
-    
-  </body>
 
-  </html>
-  <!-- partial -->
-
+    <section class="wallpaper">
+      <img src="img/ontrack.gif" alt="">
+      <div class="content-name">
+      <div class="nametag"><p class="firstTag">on</p><p>track.</p></div>
+      </div>
+    </section>
+  </main>
+  
 </body>
-
 </html>

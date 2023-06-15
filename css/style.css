@@ -1,228 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600&family=Geologica:wght@700&family=Kulim+Park:wght@700&display=swap');
-
-
-*{
-  margin: 0;padding: 0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-.spanText img{
-  width: 28px;
-}
-.text{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
- 
-}
-.sname{
-  font-family: 'Baloo Bhaijaan 2', cursive;
-  line-height: 15px;
-    font-size: 25px;
-}
-.sname p{
-  font-family: 'Baloo Bhaijaan 2', cursive;
- 
-    font-size: 17px;
-}
-footer {
-  width: 80%;
-    display: flex;
-    bottom: 0;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-}
-.headbox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.headbox img{
-  width: 10rem;
-}
-.headbox p{
- 
-  font-size: 1.5rem;
-  font-style: italic;
-  color: orangered;
-}
-section{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-}
-section .imgBx{
-  position: relative;
-  width: 50%;
-  height: 100%;
-}
-section .imgBx:before{
-  content: '';
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(225deg, #ff5a1a, #080601);
-  z-index: 1;
-  mix-blend-mode: screen;
+  font-family: 'Lexend Deca', sans-serif;
 }
 
-section .imgBx img{
-  position: absolute;
-  top: 0;left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+:root {
+  --white: #FFF;
+  --whitesmoke: #F9F9F9;
+  --light-grey: #ECECEC;
+  --grey: #C4C4C4;
+  --medium-grey: #A7A7A7;
+  --deep-grey: #343434;
+  --black: #000000;
+  --blue: #1B77F3;
+  --red: #CF3C3F;
 }
-section .contentBx{
+
+main {
   display: flex;
-  justify-content: center;
+}
+.sign-in-form{
+  width: 100%;
+}
+.text-position{
+  font-size: 26px !important;
+  color: #592cb6;
+}
+.login {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 50%;
-  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
+  padding: clamp(35px, 8%, 70px);
 }
-section .contentBx .formBx{
-  width: 50%;
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-section .contentBx .formBx h2{
-  color: #607d8b;
-  font-weight: 600;
+
+.login__logo {
+  width: 200px;
+  margin-bottom: 20px;
+  transform: rotate(190deg);
+}
+ 
+.login__title {
+  color: #6f6f6f;
   font-size: 1.5em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  border-bottom: 4px solid #ff4584;
-  display: inline-block;
-  letter-spacing: 1px;
-  font-weight: 500;
-
-}
-section .contentBx .formBx .inputBx{
-  margin-bottom: 20px;
-}
-section .contentBx .formBx .inputBx span{
-  font-size: 16px;
-  margin-bottom: 5px;
-  display: inline-block;
-  color: #607d8b;
-   font-weight: 500;
-
-  letter-spacing: 1px;
-}
-section .contentBx .formBx .inputBx input{
-  width: 100%;
-  padding: 10px 20px;
-  outline: none;
-  font-weight: 500;
-   text-align: center;
-  border: 1px solid #607d8b;
-  font-size: 16px;
-  color: #607d8b;
-  background: transparent;
-  border-radius: 30px;
-  font-weight: 500;
-
-}
-section .contentBx .formBx .inputBx input[type="submit"]{
-  background: #1e6adb;
-  color: #fff;
-  outline: none;
-  border: none;
-  font-weight: 500;
-  cursor: pointer;
-}
-section .contentBx .formBx .inputBx input[type="submit"]:hover{
-  background: #886bf9
-}
-section .contentBx .formBx .remember{
-  margin-bottom: 10px;
-  color: #607d8b;
-  font-weight: 400;
-  font-size: 14px;
-  font-weight: 500;
-}
-section .contentBx .formBx .inputBx p{
-  color: #607b8d;
-  font-weight: 500;
-
-}
-section .contentBx .formBx .inputBx p a{
-  color: #ff4584;
-}
-section .contentBx .formBx h3{
-  color: #607b8d;
+  margin-bottom: 30px;
+  margin-top: 50px;
   text-align: center;
-  margin: 80px 0 10px;
-  font-weight: 500;
-  
 }
-section .contentBx .formBx .sci{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.login__label {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
 }
-section .contentBx .formBx .sci li{
-  list-style: none;
-  width: 50px;
-  height: 50px;
+
+.input {
+  width: 100%;
+  background-color: var(--light-grey);
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.9em;
+  padding: 25px 10px 10px;
+  font-weight: 600;
+  color: var(--deep-grey);
+}
+
+.login__label span {
+  position: absolute;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--medium-grey);
+  margin: 20px;
+  cursor: text;
+  transition: all 200ms ease;
+}
+
+.input:focus {
+  background-color: var(--whitesmoke);
+  border: 2px solid var(--deep-grey);
+}
+
+.login__label .span-active {
+  font-size: 0.7em;
+  margin: 8px 10px;
+}
+
+.login__icons {
   display: flex;
-  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login__icons img {
+  width: 20px;
+}
+
+.icons__button {
+  width: 33.33%;
+  display: flex;
   align-items: center;
-  background: #607d8b;
-  border-radius: 50%;
-  margin: 0 7px;
+  justify-content: center;
+  height: 35px;
+  border-radius: 5px;
   cursor: pointer;
+  border: none;
 }
-section .contentBx .formBx .sci li:hover{
-  background: #ff4584;
+
+.login__icons .icons__button:nth-child(1) {
+  background-color: var(--blue);
 }
-section .contentBx .formBx .sci li img{
-  transform: scale(.5);
-  filter: invert(1);
-}section .contentBx .formBx .sci li:hover{
-  background: #ff4584;
+
+.login__icons .icons__button:nth-child(2) {
+  background-color: var(--light-grey);
 }
-section .contentBx .formBx .sci li img{
-  transform: scale(.2);
-  filter: invert(1);
+
+.login__icons .icons__button:nth-child(3) {
+  background-color: var(--black);
 }
-input[type="checkbox"]{
-  margin-right: 5px;
+
+.login__label--checkbox {
+  width: 100%;
+  margin: 15px 0 50px;
+  font-size: 0.9em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
 }
- 
-@media (max-width: 768px){
-  section .imgBx{
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.input--checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--light-grey);
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+.input--checkbox:checked {
+  background-color: var(--red);
+}
+
+.input--checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: 3px solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  margin: 2px 6px;
+}
+
+.login__button {
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--red);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.login__button svg {
+  fill: white;
+}
+
+.login__button:disabled {
+  cursor: auto;
+  background-color: white;
+  border: 2px solid var(--light-grey);
+}
+
+.login__button:disabled svg {
+  fill: var(--grey)
+}
+
+.login__link {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: var(--medium-grey);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.loginBtn{
+    background-color: #9F73FA;
+    border: none;
+    padding: 10px;
     width: 100%;
-    height: 100%;
+    border-radius: 5px;
+    color: #f5f1f1;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.wallpaper {
+  width: 100%;
+  flex: 1;
+  background-color: #F5F1F9;
+  display: grid;
+  justify-items: center;
+}
+.wallpaper img{
+  width: 55rem;
+  margin-top: -1rem;
+  transform: rotate(190deg);
+   
+}
+.content-name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 7rem;
+  line-height: 100px;
+}
+.nametag p{
+  font-size: 6rem;
+  font-family: 'Baloo Bhaijaan 2', cursive; 
+}
+.firstTag{
+  font-size: 10rem !important;
+  line-height: 60px;
+}
+
+/*texto pequeno abaixo logo */
+.content-name-small{
+ margin-top: -25px;
+}
+.nametag-small p{
+  font-family: 'Baloo Bhaijaan 2', cursive; 
+  line-height: 30px;
+  font-size: 45px;
+
+}
+.firstTag-small{
+  font-size: 50px !important;
+}
+.sup-btn{
+  text-align: center;
+}
+@media(min-width: 1300px) and (max-width:1500px){
+  .wallpaper img{
+    width: 44rem;
+}
+}
+@media(min-width: 1180px) and (max-width:1299px){
+  .wallpaper img{
+    width: 36rem;
+}
+}
+@media(min-width: 1000px) and (max-width:1179px){
+  .wallpaper img{
+    width: 26rem;
+    margin-top: 7rem;
+}
+}
+@media(max-width: 999px){
+.wallpaper{
+    display: none;
   }
-  section .contentBx{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-  section .contentBx .formBx{
-    width: 100%;
-    padding: 40px;
-    background: rgb(255 255 255 / 0.8);
-    margin: 0px;
-    border-radius: 10px;
-    height: 100vh;
-    padding-top: 50%;
-  }
-  section .contentBx .formBx h3{
-    color: #607d8b;
-    text-align: center;
-    margin: 30px 0 10px;
-    font-weight: 500;
+  .login{
+    max-width: 900px;
   }
 }

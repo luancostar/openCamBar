@@ -58,7 +58,7 @@ $codigo_barras = $_POST['codigo_barras'];
                     </h6>
                 </div>
 
-                <button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
+               <a href="../logoff.php"><button id="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button></a>
 
             </div>
         </div>
@@ -80,11 +80,11 @@ $codigo_barras = $_POST['codigo_barras'];
             <form id="input-form" action="../functions.php" method="POST">
                 <label for="">Inserir Código de Barras</label>
                 <input id="resultado" oninput="verifyCode()" style="width: 85%; border-radius: 5px; border: 1px solid; margin-bottom: 10px; text-align: center; font-size: 20px; font-weight: bold;" name="codigo_barras" type="text" />
-                <button style="background-color: #0070ff; width: 85%; border: none; border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()">
-                    <img style="width: 28px;" src="../img/camera.png" alt="">
+                <button style="background-color:#9F73FA;width: 85%; border: none; border-radius: 5px;" type="button" onclick="mostrarEsconderDiv()">
+                    <img style="width: 28px;filter: hue-rotate(45deg);" src="../img/camera.png" alt="">
                 </button>
                 <button id="enviar_button" style=" border: none; background: transparent; margin-top: 1rem;" type="submit">
-                    <img style="width: 45px;" src="../img/enviar.png" alt="">
+                    <img style="width: 45px;filter: hue-rotate(85deg)" src="../img/enviar.png" alt="">
                     <label style="font-size: 22px; font-weight: bold; color: #767676;" for="">enviar</label>
                 </button>
                 <a href="coletas.php" rel="noopener noreferrer"> <button style="    background-color: #b5b5b5;
