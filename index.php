@@ -12,6 +12,12 @@ session_start();
   <link rel="stylesheet" href="css/style.css">
   <script src="js/loginScript.js" defer></script>
   <title>ontrack. || Motoristas</title>
+  <script>
+        if (typeof navigator.serviceWorker !== 'undefined'){
+            navigator.serviceWorker.register('pwabuilder-sw.js')
+        }
+    </script>
+    <link rel="manifest" href="manifest.json"/>
 </head>
 
 <body>
